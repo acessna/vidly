@@ -1,0 +1,23 @@
+{
+  "name": "vidly",
+  "version": "1.0.0",
+  "description": "Building out backend API with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acessna/vidly.git"
+  },
+  "author": "Adam Cessna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acessna/vidly/issues"
+  },
+  "homepage": "https://github.com/acessna/vidly#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^17.2.1"
+  }
+}
