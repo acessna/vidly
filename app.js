@@ -20,5 +20,39 @@ let genres = [
     }
 ]
 
+app.get('/api/genres', (req, res) => {
+    res.send(genres);
+})
+
+app.post('/api/genres', (req, res) => {
+    const { error } = validateGenre(req.boy);
+    if (error) return res.status(400).send(error.details[0].message);
+
+    const genre = {
+        name: req.body.name,
+        id: genres.length + 1
+    }
+
+    genres.push(genre);
+    res.send(genre);
+})
+
+
+
+
+
+
+
+
+
+
+const validateGenre = (genre) => {
+    const schema = {
+        name: Joi.string().min(3).required()
+    };
+    return Joi.validate(genre, schema);
+}
+
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
